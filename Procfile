@@ -1,0 +1,1 @@
+web: litellm --config litellm_settings.yaml --port $PORT
