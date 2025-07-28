@@ -3,13 +3,20 @@ model_list:
     litellm_params:
       model: groq/meta-llama/llama-4-scout-17b-16e-instruct
       api_key: os.environ/GROQ_API_KEY
+      rpm: 30
+      max_tokens: 6000
   - model_name: embed-voyage
     litellm_params:
       model: voyage/voyage-3.5-lite
       api_key: os.environ/VOYAGE_API_KEY
+      rpm: 2000
 
-cache_params:
-  type: redis
-  host: os.environ/REDISHOST
-  port: os.environ/REDISPORT
-  password: os.environ/REDIS_PASSWORD
+litellm_settings:
+  set_verbose: True
+  cache: true
+  cache_params:
+    type: redis
+    host: os.environ/REDISHOST
+    port: os.environ/REDISPORT
+    password: os.environ/REDIS_PASSWORD
+    ttl: 600
