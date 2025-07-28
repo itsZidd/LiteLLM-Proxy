@@ -7,3 +7,9 @@ model_list:
     litellm_params:
       model: voyage/voyage-3.5-lite
       api_key: os.environ/VOYAGE_API_KEY
+
+cache_params:
+  type: redis
+  host: os.environ/REDISHOST
+  port: os.environ/REDISPORT
+  password: os.environ/REDIS_PASSWORD
