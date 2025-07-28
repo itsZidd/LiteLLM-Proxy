@@ -7,12 +7,3 @@ model_list:
     litellm_params:
       model: voyage/voyage-3.5-lite
       api_key: os.environ/VOYAGE_API_KEY
-
-litellm_settings:
-  set_verbose: True
-  cache: True
-  chace_params:
-    type: redis
-    host: os.environ/REDIS_HOST
-    port: os.environ/REDIS_PORT
-    password: os.environ/REDIS_PASSWORD
